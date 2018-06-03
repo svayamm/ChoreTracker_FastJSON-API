@@ -1,0 +1,52 @@
+{
+  "apiVersion": "2.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "apis": [
+    {
+      "path": "/apidocs/api/v1/children.{format}",
+      "description": "Children Management"
+    },
+    {
+      "path": "/apidocs/api/v1/tasks.{format}",
+      "description": "Tasks Management"
+    },
+    {
+      "path": "/apidocs/api/v1/chores.{format}",
+      "description": "Chores Management"
+    },
+    {
+      "path": "/apidocs/api/v1/users.{format}",
+      "description": "Users Management"
+    },
+    {
+      "path": "/apidocs/api/v1/application.{format}",
+      "description": "Application Management"
+    },
+    {
+      "path": "/apidocs/api/v2/children.{format}",
+      "description": "Children Management"
+    },
+    {
+      "path": "/apidocs/api/v2/tasks.{format}",
+      "description": "Tasks Management"
+    },
+    {
+      "path": "/apidocs/api/v2/chores.{format}",
+      "description": "Chores Management"
+    },
+    {
+      "path": "/apidocs/api/v2/users.{format}",
+      "description": "Users Management"
+    },
+    {
+      "path": "/apidocs/api/v2/application.{format}",
+      "description": "Application Management"
+    }
+  ],
+  "authorizations": null,
+  "info": {
+    "title": "Chore Tracker API",
+    "description": "Uses swagger ui and docs to document the ChoreTracker API"
+  }
+}

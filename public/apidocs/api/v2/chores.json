@@ -1,0 +1,237 @@
+{
+  "apiVersion": "2.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "chores",
+  "apis": [
+    {
+      "path": "/v2/chores.json",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token in the format of: Token token=\"2eed18b92a86d0258af43b3376e9b823\"",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "chronological",
+              "type": "boolean",
+              "description": "Order chores by chronology",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "by_task",
+              "type": "boolean",
+              "description": "Order chores by task",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "done",
+              "type": "boolean",
+              "description": "Filter on whether or not the chore is done/pending",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "upcoming",
+              "type": "boolean",
+              "description": "Filter on whether or not the chore is upcoming/past",
+              "required": false
+            }
+          ],
+          "summary": "Fetches all Chores",
+          "notes": "This lists all the Chores",
+          "nickname": "Api::V2::Chores#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/v2/chores.json",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token in the format of: Token token=\"2eed18b92a86d0258af43b3376e9b823\"",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "child_id",
+              "type": "integer",
+              "description": "Child ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "task_id",
+              "type": "integer",
+              "description": "Task ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "due_on",
+              "type": "date",
+              "description": "Due Date",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "completed",
+              "type": "boolean",
+              "description": "Completed",
+              "required": true
+            }
+          ],
+          "summary": "Creates a new Chore",
+          "responseMessages": [
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "nickname": "Api::V2::Chores#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/v2/chores/{id}.json",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token in the format of: Token token=\"2eed18b92a86d0258af43b3376e9b823\"",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Chore ID",
+              "required": true
+            }
+          ],
+          "summary": "Shows one Chore",
+          "notes": "This lists details of one Chore",
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Api::V2::Chores#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/v2/chores/{id}.json",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token in the format of: Token token=\"2eed18b92a86d0258af43b3376e9b823\"",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Chore Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "child_id",
+              "type": "integer",
+              "description": "Child ID",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "task_id",
+              "type": "integer",
+              "description": "Task ID",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "due_on",
+              "type": "date",
+              "description": "Due Date",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "completed",
+              "type": "boolean",
+              "description": "Completed",
+              "required": false
+            }
+          ],
+          "summary": "Updates an existing Chore",
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "nickname": "Api::V2::Chores#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/v2/chores/{id}.json",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Chore Id",
+              "required": true
+            }
+          ],
+          "summary": "Deletes an existing Chore",
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Api::V2::Chores#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}
